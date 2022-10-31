@@ -2,13 +2,43 @@ import { useState } from "react";
 
 const LoginForm = ({ Log, error }) => {
 
-    const [details, Setdetails] = useState({ username: "", email: "", password: "" })
+
+    const [email, Setemail] = useState("");
+    const [password, SetPassword] = useState("");
+    const [username, SetUsername] = useState("");
+
+
+
+
 
     const submitHandler = e => {
         e.preventDefault();
 
         Log(details);
     }
+
+
+    const handleLogin = async (event) => {
+        event.preventDefault();
+
+        let response = await fetch(`http://localhost:8080/api/auth/login`, {
+
+            method: 'POST',
+            body: JSON.stringify({
+
+                username: username,
+                password: password,
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        let token = await response.text();
+        localStorage.setItem("token", token);
+        console.log(token);
+    }
+
 
 
     return (
@@ -21,7 +51,7 @@ const LoginForm = ({ Log, error }) => {
                         type="text"
                         name="Username"
                         id="Username"
-                        onChange={e => Setdetails({ ...details, username: e.target.value })} value={details.username}></input>
+                        onChange={(e => SetUsername(e.target.value))} value={username}></input>
                 </div>
 
                 <div className="form-group">
@@ -30,7 +60,7 @@ const LoginForm = ({ Log, error }) => {
                         type="text"
                         name="email"
                         id="email"
-                        onChange={e => Setdetails({ ...details, email: e.target.value })} value={details.email}></input>
+                        onChange={(e => Setemail(e.target.value))} value={email}></input>
                 </div>
 
                 <div className="form-group">
@@ -39,10 +69,9 @@ const LoginForm = ({ Log, error }) => {
                         type="text"
                         name="Password"
                         id="Password"
-                        onChange={e => Setdetails({ ...details, password: e.target.value })} value={details.password} ></input>
+                        onChange={(e => SetPassword(e.target.value))} value={password} ></input>
                 </div>
-                <button> Login</button>
-                <input type="submit" value="Login" />
+                <input onClick={handleLogin} type="submit" value="Login" />
             </div>
 
         </form>
