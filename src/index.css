@@ -91,8 +91,9 @@ form .form-inner input[type="submit"]{
   border-radius: 8px;
   background-position: 0%;
   background-size: 200%;
+  background-color: #d5dbe7;
   transition: 0.4s;
-  color: #FFF;
+  color: rgb(20, 19, 19);
   font-weight: 700;
   cursor: pointer;
 }

@@ -36,14 +36,17 @@ const Login = () => {
 
     return (
         <div className="App">
-            {(user.email != "") ? (
-                <div className="Welcome">
-                    <h2>Welcome, <span>{user.name}</span></h2>
-                    <button onClick={Logout}>Logout</button>
-                </div>
-            ) : (
-                <LoginForm Log={Log} error={error} />
-            )}
+
+            {(user.email != "") ?
+                (
+                    <div className="Welcome">
+                        <h2>Welcome, <span>{user.name}</span></h2>
+                        <button onClick={Logout}>Logout</button>
+                    </div>
+                ) :
+                (
+                    <LoginForm Log={Log} error={error} />
+                )}
         </div>
     )
 
