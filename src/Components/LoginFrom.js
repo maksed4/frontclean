@@ -41,6 +41,7 @@ const LoginForm = ({ Log, error }) => {
                         id="Password"
                         onChange={e => Setdetails({ ...details, password: e.target.value })} value={details.password} ></input>
                 </div>
+                <button> Login</button>
                 <input type="submit" value="Login" />
             </div>
 
