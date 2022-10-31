@@ -7,7 +7,7 @@ const Login = () => {
 
     const adminUser = {
         email: "admin@admin.com",
-        password: "admin123"
+        password: "admin1234"
     }
 
     const [user, Setuser] = useState({ username: "", email: "" });
