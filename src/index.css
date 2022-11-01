@@ -91,7 +91,21 @@ form .form-inner input[type="submit"]{
   border-radius: 8px;
   background-position: 0%;
   background-size: 200%;
-  background-color: #d5dbe7;
+  background-color: #3e73dd;
+  transition: 0.4s;
+  color: rgb(20, 19, 19);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn{
+  margin-left: 110px;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-position: 0%;
+  background-size: 200%;
+  background-color: #e4cdc7;
   transition: 0.4s;
   color: rgb(20, 19, 19);
   font-weight: 700;
