@@ -14,7 +14,7 @@ const MinaSidor = () => {
         <div>
 
             <div>
-                <h1>Asalam alekym.</h1>
+                <h1>Mina Sidor</h1>
             </div>
 
 

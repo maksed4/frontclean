@@ -13,8 +13,6 @@ const LoginForm = ({ Log, error }) => {
 
     const submitHandler = e => {
         e.preventDefault();
-
-        Log(details);
     }
 
 
