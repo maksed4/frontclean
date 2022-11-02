@@ -1,13 +1,20 @@
-import Login from './Components/Login';
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import LoginForm from './Components/LoginForm';
+import MinaSidor from './Components/MinaSidor';
+import Register from './Components/Register';
 
 
 
 function App() {
   return (
-    <div className="App">
-      <Login />
-    </div>
+
+    <BrowserRouter >
+      <Routes>
+        <Route path='/' element={<LoginForm />} />
+        <Route path='Registration' element={<Register />} />
+        <Route path="MinaSidor" element={<MinaSidor />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
