@@ -6,7 +6,7 @@ import "../styledComponents/Layout.css"
 
 
 export function Layout() {
-    return(
+    return (
         <div>
             <header>
                 <Nav>
@@ -22,5 +22,6 @@ export function Layout() {
                 <Outlet />
             </main>
             <footer></footer>
-        </div>)
+        </div>
+    )
 }
