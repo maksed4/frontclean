@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Register from "./Register";
+import Logo from "../images/Logo.png"
+
+
 const LoginForm = ({ Log, error }) => {
 
 
@@ -33,7 +36,7 @@ const LoginForm = ({ Log, error }) => {
                 'Content-Type': 'application/json'
             }
         }).then(
-            navigate("MinaSidor")
+            navigate("Hem")
         )
 
         let token = await response.text();
@@ -46,7 +49,8 @@ const LoginForm = ({ Log, error }) => {
 
     return (
         <div className="App">
-            <form onSubmit={submitHandler}>
+            <img src={Logo} alt="Logotype Städa Fint AB" width="150" height="100"></img>
+            <form className="Form-background" onSubmit={submitHandler}>
                 <div className="form-inner">
                     <h2> Login </h2>
                     <div className="form-group">

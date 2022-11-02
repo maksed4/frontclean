@@ -1,0 +1,18 @@
+.Nav {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    color:#888
+}
+
+.Link {
+    text-decoration: none;
+    color:#888
+}
+
+
+/*@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }*/

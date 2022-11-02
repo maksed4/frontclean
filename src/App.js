@@ -1,8 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Hem } from './Components/Hem';
+import { Layout } from './Components/Layout';
 import LoginForm from './Components/LoginForm';
 import MinaSidor from './Components/MinaSidor';
 import Register from './Components/Register';
-
 
 
 function App() {
@@ -10,9 +11,12 @@ function App() {
 
     <BrowserRouter >
       <Routes>
-        <Route path='/' element={<LoginForm />} />
-        <Route path='Registration' element={<Register />} />
-        <Route path="MinaSidor" element={<MinaSidor />} />
+        <Route path="/" element={<LoginForm />}/>
+        <Route path="Hem" element={<Layout />} >
+          <Route index element={<Hem />} />
+          <Route path="Registration" element={<Register />} />
+          <Route path="MinaSidor" element={<MinaSidor />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

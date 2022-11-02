@@ -14,13 +14,10 @@ const MinaSidor = () => {
         <div>
 
             <div>
-<<<<<<< HEAD
-                <h1>Asalam alekym</h1>
-=======
-                <h1>Asalam alekym.</h1>
->>>>>>> IN-23-m-mina-sidor-for-stadare-m
-            </div>
 
+                <h1></h1>
+
+            </div>
 
         </div>
     )
