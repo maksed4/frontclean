@@ -49,7 +49,7 @@ const LoginForm = ({ Log, error }) => {
 
     return (
         <div className="App">
-            <img src={Logo} alt="Logotype Städa Fint AB" width="150" height="100"></img>
+            <img src={Logo} alt="Logotype Städa Fint AB" width="200" height="150"></img>
             <form className="Form-background" onSubmit={submitHandler}>
                 <div className="form-inner">
                     <h2> Login </h2>
