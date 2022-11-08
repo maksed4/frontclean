@@ -1,6 +1,6 @@
-export function Hem () {
+export function Hem() {
 
-    return(
-        <div></div>
+    return (
+        <div>THis is home page</div>
     )
 }

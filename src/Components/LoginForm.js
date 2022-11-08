@@ -1,16 +1,16 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Register from "./Register";
+import { useNavigate } from "react-router-dom";
 import Logo from "../images/Logo.png"
 
 
-const LoginForm = ({ Log, error }) => {
+
+const LoginForm = () => {
 
 
 
-    const [email, Setemail] = useState("");
-    const [password, SetPassword] = useState("");
-    const [username, SetUsername] = useState("");
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+
 
 
     let navigate = useNavigate();
@@ -18,8 +18,8 @@ const LoginForm = ({ Log, error }) => {
 
     const submitHandler = e => {
         e.preventDefault();
-    }
 
+    }
 
     const handleLogin = async (event) => {
         event.preventDefault();
@@ -29,14 +29,14 @@ const LoginForm = ({ Log, error }) => {
             method: 'POST',
             body: JSON.stringify({
 
-                username: username,
-                password: password,
+                user: username,
+                pass: password,
             }),
             headers: {
                 'Content-Type': 'application/json'
             }
         }).then(
-            navigate("Hem")
+            navigate("/Hem")
         )
 
         let token = await response.text();
@@ -45,6 +45,10 @@ const LoginForm = ({ Log, error }) => {
         console.log(token);
     }
 
+    const handleChange = (e) => {
+
+        setPassword({ [e.target.password]: e.target.value })
+    }
 
 
     return (
@@ -59,25 +63,17 @@ const LoginForm = ({ Log, error }) => {
                             type="text"
                             name="Username"
                             id="Username"
-                            onChange={(e => SetUsername(e.target.value))} value={username}></input>
-                    </div>
-
-                    <div className="form-group">
-                        <label htmlFor="email">Email:</label>
-                        <input
-                            type="text"
-                            name="email"
-                            id="email"
-                            onChange={(e => Setemail(e.target.value))} value={email}></input>
+                            onChange={(e => setUsername(e.target.value))} value={username}></input>
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="password">Password:</label>
                         <input
-                            type="password"
+                            type="text"
                             name="Password"
                             id="Password"
-                            onChange={(e => SetPassword(e.target.value))} value={password} ></input>
+                            onChange={handleChange} value={password}  ></input>
+
                     </div>
                     <input onClick={handleLogin} type="submit" value="Login" />
                     <button onClick={() => { navigate("/Registration") }} className="btn"> Registrera mig</button>

@@ -4,6 +4,8 @@ import { Layout } from './Components/Layout';
 import LoginForm from './Components/LoginForm';
 import MinaSidor from './Components/MinaSidor';
 import Register from './Components/Register';
+import NotFound from './Components/NotFound';
+import Test from './Components/test';
 
 
 function App() {
@@ -11,11 +13,13 @@ function App() {
 
     <BrowserRouter >
       <Routes>
-        <Route path="/" element={<LoginForm />}/>
-        <Route path="Hem" element={<Layout />} >
-          <Route index element={<Hem />} />
-          <Route path="Registration" element={<Register />} />
-          <Route path="MinaSidor" element={<MinaSidor />} />
+        <Route path='/' element={<Layout />}>
+          <Route path='/login' element={<LoginForm />}></Route>
+          <Route path='/register' element={<Register />}></Route>
+          <Route path='/hem' element={<Hem />}></Route>
+          <Route path='/minasidor' element={<MinaSidor />}></Route>
+          <Route path='/test' element={<Test />}></Route>
+
         </Route>
       </Routes>
     </BrowserRouter>

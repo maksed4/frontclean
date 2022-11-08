@@ -15,7 +15,7 @@ const MinaSidor = () => {
 
             <div>
 
-                <h1></h1>
+                <h1>Det är mina sidor</h1>
 
             </div>
 
