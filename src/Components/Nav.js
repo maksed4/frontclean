@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 import AuthService from "../Services/AuthService";
 import { Link } from "react-router-dom"
 import Logo from "../images/Logo.png"
@@ -6,11 +7,19 @@ import Logo from "../images/Logo.png"
 const Nav = () => {
     const [loggedInUser, SetLoggedInUser] = useState(null);
 
+    let navigate = useNavigate();
+
     useEffect(() => {
         if (AuthService.getCurrentUser()) {
             SetLoggedInUser(AuthService.getCurrentUser())
         }
     }, []);
+
+    function handleClick() {
+        AuthService.logout();
+        navigate("/");
+        window.location.reload();
+    }
 
     return(
         loggedInUser ?
@@ -21,6 +30,9 @@ const Nav = () => {
                 <ul className="Link"><Link>BOKA STÄDNING</Link></ul>
                 <ul className="Link"><Link to="MinaSidor">MINA SIDOR</Link></ul>
             </ul>
+            <button type="button" onClick={handleClick}>
+                Log out
+            </button>
         </nav>
         :
         <></>
