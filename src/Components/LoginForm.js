@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../images/Logo.png"
 import AuthService from "../Services/AuthService";
@@ -9,8 +9,15 @@ const LoginForm = () => {
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [loggedInUser, SetLoggedInUser] = useState(null);
 
     let navigate = useNavigate();
+
+    useEffect(() => {
+        if (AuthService.getCurrentUser()) {
+            navigate("/hem")
+        }
+    }, []);
 
     const submitHandler = e => {
         e.preventDefault();

@@ -13,7 +13,7 @@ const MinaSidor = () => {
         if (AuthService.getCurrentUser()) {
             SetLoggedInUser(AuthService.getCurrentUser())
         } else {
-            navigate("/login")
+            navigate("/")
         }
     }, []);
 

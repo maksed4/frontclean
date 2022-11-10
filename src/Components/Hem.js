@@ -13,7 +13,7 @@ export function Hem() {
         if (AuthService.getCurrentUser()) {
             SetLoggedInUser(AuthService.getCurrentUser())
         } else {
-            navigate("/login")
+            navigate("/")
         }
     }, []);
 

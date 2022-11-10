@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter >
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route path='/login' element={<LoginForm />}></Route>
+          <Route index element={<LoginForm />}></Route>
           <Route path='/register' element={<Register />}></Route>
           <Route path='/hem' element={<Hem />}></Route>
           <Route path='/minasidor' element={<MinaSidor />}></Route>

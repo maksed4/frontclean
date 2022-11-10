@@ -16,7 +16,6 @@ export function Layout() {
                         <ul className="Link"><Link>BOKA STÄDNING</Link></ul>
                         <ul className="Link"><Link to="MinaSidor">MINA SIDOR</Link></ul>
                         <ul className="Link" ><Link to="register"> register </Link></ul>
-                        <ul className="Link" ><Link to="login"> Login </Link></ul>
                     </ul>
                 </Nav>
             </header>
