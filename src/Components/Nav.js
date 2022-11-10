@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import AuthService from "../Services/AuthService";
-import { Link } from "react-router-dom"
-import Logo from "../images/Logo.png"
+import { Link } from "react-router-dom";
+import Logo from "../images/Logo.png";
+import AdminNav from "./sub/AdminNav";
+import CleanerNav from "./sub/CleanerNav";
 
 const Nav = () => {
-    const [loggedInUser, SetLoggedInUser] = useState(null);
+    const [loggedInUser, SetLoggedInUser] = useState({
+        id: 0,
+        username: "",
+        token: "",
+        roles: []
+    });
 
     let navigate = useNavigate();
 
@@ -22,7 +29,11 @@ const Nav = () => {
     }
 
     return(
-        loggedInUser ?
+        loggedInUser.roles.includes("ADMIN") ?
+        <AdminNav />
+        : loggedInUser.roles.includes("CLEANER") ?
+        <CleanerNav />
+        :
         <nav>
             <ul className="Nav">
                 <img src={Logo} alt="Logotype Städa Fint AB" width="150" height="100"></img>
@@ -34,8 +45,6 @@ const Nav = () => {
                 Log out
             </button>
         </nav>
-        :
-        <></>
     );
 }
 
