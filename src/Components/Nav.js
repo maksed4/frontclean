@@ -33,7 +33,7 @@ const Nav = () => {
         <AdminNav />
         : loggedInUser.roles.includes("CLEANER") ?
         <CleanerNav />
-        :
+        : loggedInUser.roles.includes("USER") ?
         <nav>
             <ul className="Nav">
                 <img src={Logo} alt="Logotype Städa Fint AB" width="150" height="100"></img>
@@ -45,6 +45,8 @@ const Nav = () => {
                 Log out
             </button>
         </nav>
+        :
+        <></>
     );
 }
 
