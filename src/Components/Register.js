@@ -47,14 +47,15 @@ const Register = () => {
 
                 username: username,
                 password: password,
-                email: email
+                email: email,
+                roles: ["USER"]
             }),
             headers: {
                 'Content-Type': 'application/json'
             }
 
         }).then(
-            navigate("/MinaSidor")
+            navigate("/")
         )
 
         console.log(response)

@@ -61,7 +61,7 @@ const LoginForm = () => {
 
                     </div>
                     <input onClick={handleLogin} type="submit" value="Login" />
-                    <button onClick={() => { navigate("/Registration") }} className="btn"> Registrera mig</button>
+                    <button onClick={() => { navigate("/register") }} className="btn"> Registrera mig</button>
                 </div>
 
             </form>
