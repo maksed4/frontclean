@@ -1,35 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../styledComponents/Register.css"
 
-const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 const Register = () => {
 
-    const userRef = useRef();
-    const errRef = useRef();
-
-    const [user, setUser] = useState('');
-    const [validName, setValidName] = useState(false);
-    const [userFocus, setUserFocus] = useState(false);
-
-    const [pwd, setPwd] = useState('');
-    const [validPwd, setValidPwd] = useState(false);
-    const [pwdFocus, setPwdFocus] = useState(false);
-
-    const [matchPwd, setMatchPwd] = useState('');
-    const [validMatch, setValidMatch] = useState(false);
-    const [matchFocus, setMatchFocus] = useState(false);
-
-    const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
-
-
     let navigate = useNavigate();
-
 
     const submitHandler = e => {
         e.preventDefault();
@@ -41,7 +17,6 @@ const Register = () => {
     const handleRegistration = async () => {
 
         let response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/auth/signup`, {
-
             method: 'POST',
             body: JSON.stringify({
 
@@ -53,21 +28,13 @@ const Register = () => {
             headers: {
                 'Content-Type': 'application/json'
             }
-
         }).then(
             navigate("/")
         )
-
         console.log(response)
-
-
     }
 
-
-
-
     return (
-
         <section>
             <div className="App">
                 <form onSubmit={submitHandler}>
@@ -100,12 +67,12 @@ const Register = () => {
                                 onChange={(e => SetPassword(e.target.value))} value={password} ></input>
                         </div>
                         <input type="submit" value="Registrera mig" onClick={() => {
-                            //navigate("/MinaSidor")
                             handleRegistration()
                         }} />
-
+                        <input type="submit" value="Login" onClick={() => {
+                            navigate("/")
+                        }} />
                     </div>
-
                 </form>
             </div>
         </section>
