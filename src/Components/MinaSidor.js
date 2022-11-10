@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
-import LoginForm from "./LoginForm";
+import AuthService from "../Services/AuthService";
 
 const MinaSidor = () => {
 
@@ -9,6 +9,13 @@ const MinaSidor = () => {
 
     const [loggedInUser, SetLoggedInUser] = useState(null);
 
+    useEffect(() => {
+        if (AuthService.getCurrentUser()) {
+            SetLoggedInUser(AuthService.getCurrentUser())
+        } else {
+            navigate("/login")
+        }
+    }, []);
 
     return (
         <div>

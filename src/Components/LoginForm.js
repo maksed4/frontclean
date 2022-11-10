@@ -1,20 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../images/Logo.png"
+import AuthService from "../Services/AuthService";
 
 
 
 const LoginForm = () => {
 
-
-
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
-
-
     let navigate = useNavigate();
-
 
     const submitHandler = e => {
         e.preventDefault();
@@ -24,30 +20,12 @@ const LoginForm = () => {
     const handleLogin = async (event) => {
         event.preventDefault();
 
-        let response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/auth/login`, {
-
-            method: 'POST',
-            body: JSON.stringify({
-
-                user: username,
-                pass: password,
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        }).then(
-            navigate("/Hem")
-        )
-
-        let token = await response.text();
-
-        localStorage.setItem("token", token);
-        console.log(token);
-    }
-
-    const handleChange = (e) => {
-
-        setPassword({ [e.target.password]: e.target.value })
+        AuthService.login(username, password)
+        .then(() => {
+                navigate("/Hem");
+                window.location.reload();
+            })
+        .catch(error => alert(error));
     }
 
 
@@ -69,10 +47,10 @@ const LoginForm = () => {
                     <div className="form-group">
                         <label htmlFor="password">Password:</label>
                         <input
-                            type="text"
+                            type="password"
                             name="Password"
                             id="Password"
-                            onChange={handleChange} value={password}  ></input>
+                            onChange={(e => setPassword(e.target.value))} value={password}></input>
 
                     </div>
                     <input onClick={handleLogin} type="submit" value="Login" />
