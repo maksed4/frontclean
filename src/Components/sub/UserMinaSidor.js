@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 
 const UserMinaSidor = () => {
 
+    const [firstname, setFirstname] = useState("");
+
     const [loggedInCustomer, setLoggedInCustomer] = useState({
         firstname: "",
         lastname: "",
@@ -15,7 +17,9 @@ const UserMinaSidor = () => {
             <div>
                 <h1>Personlig information</h1>
                 <div>
-                    <input type="text" placeholder="Förnamn" value={loggedInCustomer.firstname} />
+                    <input type="text" placeholder="Förnamn" value={firstname}
+                        onChange={(e => setFirstname(e.target.value))}
+                     />
                     <input type="text" placeholder="Efternamn" value={loggedInCustomer.lastname} />
                 </div>
                 <div>

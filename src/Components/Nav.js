@@ -24,8 +24,8 @@ const Nav = () => {
 
     function handleClick() {
         AuthService.logout();
-        navigate("/");
-        window.location.reload();
+        // navigate("/");
+        // window.location.reload();
     }
 
     return(
