@@ -11,15 +11,19 @@ class AuthService {
             localStorage.setItem("user", JSON.stringify(response.data));
         }
 
-        const customerResponse = await axios
-            .get(`${process.env.REACT_APP_BASE_URL}/api/customer/${response.data.id}`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + response.data.token
-                }
-            });
-        if (customerResponse.data.id) {
-            localStorage.setItem("customer", JSON.stringify(customerResponse.data));
+        try {
+            const customerResponse = await axios
+                .get(`${process.env.REACT_APP_BASE_URL}/api/customer/${response.data.id}`, {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer ' + response.data.token
+                    }
+                });
+            if (customerResponse.data.id) {
+                localStorage.setItem("customer", JSON.stringify(customerResponse.data));
+            }
+        } catch (e) {
+            console.log(e)
         }
 
         return response.data;
