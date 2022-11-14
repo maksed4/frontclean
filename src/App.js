@@ -1,11 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Hem } from './Components/Hem';
-import { Layout } from './Components/Layout';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {Hem} from './Components/Hem';
+import {Layout} from './Components/Layout';
 import LoginForm from './Components/LoginForm';
 import MinaSidor from './Components/MinaSidor';
 import Register from './Components/Register';
-import NotFound from './Components/NotFound';
-import Test from './Components/test';
+import Boka from "./Components/Boka";
 
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
           <Route path='/register' element={<Register />}></Route>
           <Route path='/hem' element={<Hem />}></Route>
           <Route path='/minasidor' element={<MinaSidor />}></Route>
-          <Route path='/test' element={<Test />}></Route>
+          <Route path='/boka' element={<Boka />}></Route>
 
         </Route>
       </Routes>
