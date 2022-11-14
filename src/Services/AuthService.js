@@ -10,11 +10,24 @@ class AuthService {
         if (response.data.token) {
             localStorage.setItem("user", JSON.stringify(response.data));
         }
+
+        const customerResponse = await axios
+            .get(`${process.env.REACT_APP_BASE_URL}/api/customer/${response.data.id}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + response.data.token
+                }
+            });
+        if (customerResponse.data.id) {
+            localStorage.setItem("customer", JSON.stringify(customerResponse.data));
+        }
+
         return response.data;
     }
 
     logout() {
         localStorage.removeItem("user");
+        localStorage.removeItem("customer");
     }
 
     register(username, email, password) {
@@ -30,6 +43,9 @@ class AuthService {
         return JSON.parse(localStorage.getItem('user'));;
     }
 
+    getCurrentCustomer() {
+        return JSON.parse(localStorage.getItem('customer'));;
+    }
 
 }
 

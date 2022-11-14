@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Logo from "../images/Logo.png";
 import AdminNav from "./sub/AdminNav";
 import CleanerNav from "./sub/CleanerNav";
+import LogoutButton from "./LogoutButton";
 
 const Nav = () => {
     const [loggedInUser, SetLoggedInUser] = useState({
@@ -22,12 +23,6 @@ const Nav = () => {
         }
     }, []);
 
-    function handleClick() {
-        AuthService.logout();
-        // navigate("/");
-        // window.location.reload();
-    }
-
     return(
         loggedInUser.roles.includes("ADMIN") ?
         <AdminNav />
@@ -41,9 +36,7 @@ const Nav = () => {
                 <ul className="Link"><Link>BOKA STÄDNING</Link></ul>
                 <ul className="Link"><Link to="MinaSidor">MINA SIDOR</Link></ul>
             </ul>
-            <button type="button" onClick={handleClick}>
-                Log out
-            </button>
+            <LogoutButton />
         </nav>
         :
         <></>

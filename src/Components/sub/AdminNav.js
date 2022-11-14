@@ -1,17 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import AuthService from "../../Services/AuthService";
 import { Link } from "react-router-dom";
 import Logo from "../../images/Logo.png";
+import LogoutButton from "../LogoutButton";
 
 const AdminNav = () => {
-
-    let navigate = useNavigate();
-
-    function handleClick() {
-        AuthService.logout();
-        navigate("/");
-        window.location.reload();
-    }
 
     return(
         <nav>
@@ -21,9 +12,7 @@ const AdminNav = () => {
                 <ul className="Link"><Link>ALLA STÄDNING</Link></ul>
                 <ul className="Link"><Link to="MinaSidor">MINA SIDOR</Link></ul>
             </ul>
-            <button type="button" onClick={handleClick}>
-                Log out
-            </button>
+            <LogoutButton />
         </nav>
     );
 }
