@@ -43,7 +43,13 @@ const CurrentCustomerSidor = () => {
                     <p>Datum: {booking.cleaningDate.substring(0, 10)}</p>
                     <p>Tid: {booking.cleaningDate.substring(11, 16)}</p>
                     <p>Plats: {booking.location}</p>
-                    <p>Typ: {booking.cleaningType}</p>
+                    <p>Typ: {
+                        booking.cleaningType.includes("TOP_CLEANING") ? <span>Top Cleaning</span> :
+                        booking.cleaningType.includes("DIAMOND_CLEANING") ? <span>Diamond Cleaning</span> :
+                        booking.cleaningType.includes("WINDOW_CLEANING") ? <span>Window Cleaning</span> :
+                        booking.cleaningType.includes("BASIC_CLEANING") ? <span>Basic Cleaning</span> :
+                                <></>
+                    }</p>
                     <p>Färdig: {booking.done ? <span> Ja </span> : <span> Nej </span>}</p>
                     <br/>
                 </div>
