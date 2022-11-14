@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import AuthService from "../../Services/AuthService";
 import axios from "axios";
+import Avboka from "./Avboka";
 
 const CurrentCustomerSidor = () => {
 
@@ -50,7 +51,7 @@ const CurrentCustomerSidor = () => {
                         booking.cleaningType.includes("BASIC_CLEANING") ? <span>Basic Cleaning</span> :
                                 <></>
                     }</p>
-                    <p>Färdig: {booking.done ? <span> Ja </span> : <span> Nej </span>}</p>
+                    <p>Färdig: {booking.done ? <span> Ja </span> : <Avboka id={booking.id} />}</p>
                     <br/>
                 </div>
             )}
