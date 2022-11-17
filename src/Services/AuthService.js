@@ -44,11 +44,11 @@ class AuthService {
     }
 
     getCurrentUser() {
-        return JSON.parse(localStorage.getItem('user'));;
+        return JSON.parse(localStorage.getItem('user'));
     }
 
     getCurrentCustomer() {
-        return JSON.parse(localStorage.getItem('customer'));;
+        return JSON.parse(localStorage.getItem('customer'));
     }
 
 }

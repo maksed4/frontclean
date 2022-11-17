@@ -39,7 +39,7 @@ const Cleanings = () => {
                 <div key={cleaning.id}>
                     <p>Städ ID: {cleaning.id}</p>
                     <h3>Kund: <span>{<CleaningCustomer id={cleaning.customerId} />}</span></h3>
-                    <h3>Städare: <span>{<CleaningCleaner />}</span></h3>
+                    <h3>Städare: <span>{<CleaningCleaner cleaningId={cleaning.id} />}</span></h3>
                     <p>Datum: {cleaning.cleaningDate.substring(0, 10)} <span>| Tid: {cleaning.cleaningDate.substring(11, 16)}</span></p>
                     <p>Plats: {cleaning.location}</p>
                     <p>Typ: {

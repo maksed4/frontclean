@@ -6,6 +6,7 @@ import MinaSidor from './Components/MinaSidor';
 import Register from './Components/Register';
 import Boka from "./Components/Boka";
 import Cleanings from "./Components/Cleanings";
+import Assign from "./Components/Assign";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='/minasidor' element={<MinaSidor />}></Route>
           <Route path='/boka' element={<Boka />}></Route>
           <Route path='/cleanings' element={<Cleanings />}></Route>
+          <Route path='/assign/:id' element={<Assign />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
