@@ -9,11 +9,11 @@ const Avboka = (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + AuthService.getCurrentUser().token
             }
-        }).then(() => {
-            window.location.reload();
-            alert("Städning avbokad")
         })
-        ;
+            .then(() => {
+                window.location.reload();
+                alert("Städning avbokad")
+            });
     }
 
     return (

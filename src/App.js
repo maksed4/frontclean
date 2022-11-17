@@ -10,7 +10,8 @@ import Assign from "./Components/Assign";
 import AdminBoka from "./Components/AdminBoka";
 import Cleaners from "./Components/Cleaners";
 import CleanerSignup from "./Components/CleanerSignup";
-import CleanerSignupInfo from "./Components/CleanerSignupInfo";
+import Customers from "./Components/Customers";
+import CustomerSignupAdmin from "./Components/CustomerSignupAdmin";
 
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
           <Route path='/cleanings' element={<Cleanings />}></Route>
           <Route path='/cleaners' element={<Cleaners />}></Route>
           <Route path='/cleaner-signup' element={<CleanerSignup />}></Route>
-          <Route path='/cleaner-signup-info' element={<CleanerSignupInfo />}></Route>
+          <Route path='/customers' element={<Customers />}></Route>
+          <Route path='/customer-signup' element={<CustomerSignupAdmin />}></Route>
           <Route path='/assign/:id' element={<Assign />}></Route>
         </Route>
       </Routes>

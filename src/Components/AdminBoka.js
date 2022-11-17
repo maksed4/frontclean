@@ -58,6 +58,11 @@ const Boka = () => {
             window.location.reload();
             alert("Städning bokad");
         })
+            .then(() => {
+                navigate("/cleanings");
+                window.location.reload();
+                alert("Städning bokad")
+            })
         console.log(response);
     }
 
