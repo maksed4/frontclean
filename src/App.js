@@ -5,6 +5,7 @@ import LoginForm from './Components/LoginForm';
 import MinaSidor from './Components/MinaSidor';
 import Register from './Components/Register';
 import Boka from "./Components/Boka";
+import Cleanings from "./Components/Cleanings";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
           <Route path='/hem' element={<Hem />}></Route>
           <Route path='/minasidor' element={<MinaSidor />}></Route>
           <Route path='/boka' element={<Boka />}></Route>
-
+          <Route path='/cleanings' element={<Cleanings />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
