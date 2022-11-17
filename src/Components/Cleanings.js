@@ -5,6 +5,7 @@ import Avboka from "./sub/Avboka";
 import CleaningCustomer from "./sub/CleaningCustomer";
 import CleaningCleaner from "./sub/CleaningCleaner";
 import AdminAvboka from "./sub/AdminAvboka";
+import {Link} from "react-router-dom";
 
 const Cleanings = () => {
     const [cleanings, setCleanings] = useState([]);
@@ -32,6 +33,7 @@ const Cleanings = () => {
 
     return (
         <div>
+            <Link to="/admin-boka"><h1>Boka städning åt kund</h1></Link>
             {cleanings
                 .sort((a, b) => a.cleaningDate > b.cleaningDate ? 1 : -1)
                 .sort((a, b) => a.done - b.done)
