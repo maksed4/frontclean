@@ -9,15 +9,6 @@ import {Link} from "react-router-dom";
 
 const Cleanings = () => {
     const [cleanings, setCleanings] = useState([]);
-    const [clean, setClean] = useState({
-        id: 0,
-        date: "",
-        length: 0,
-        location: "",
-        type: [],
-        customer: 0,
-        done: false
-    })
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_BASE_URL}/api/cleaning/all`, {
