@@ -10,6 +10,7 @@ export function Hem() {
     const [loggedInUser, SetLoggedInUser] = useState({
         id: 0,
         username: "",
+        email: "",
         token: "",
         roles: []
     });
