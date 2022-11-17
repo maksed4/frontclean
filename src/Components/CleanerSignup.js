@@ -11,7 +11,6 @@ const CleanerSignup = () => {
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
     const [city, setCity] = useState("");
-    const [id, setId] = useState(0);
 
     let navigate = useNavigate();
 
