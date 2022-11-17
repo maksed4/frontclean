@@ -11,7 +11,32 @@
 }
 
 .LogoutButton {
-  
+  margin-left: 60px;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-position: 0%;
+  background-size: 200%;
+  background-color: #f5d58f;
+  transition: 0.4s;
+  color: rgb(20, 19, 19);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.Indrag {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  margin-top: 15px;
+}
+
+.Rubrik {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20 px;
+  padding: 10px;
+  margin-left: 50px;
 }
 
 

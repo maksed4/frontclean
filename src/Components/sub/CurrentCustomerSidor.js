@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import AuthService from "../../Services/AuthService";
 import axios from "axios";
 import Avboka from "./Avboka";
+import { Layout } from "../Layout";
 
 const CurrentCustomerSidor = () => {
 
@@ -41,15 +42,15 @@ const CurrentCustomerSidor = () => {
     return (
         loggedInCustomer.customerType.includes("PRIVATE_CUSTOMER") ?
             <div>
-                <h1>Personlig information</h1>
-                <p>Förnamn: {loggedInCustomer.firstname}</p>
-                <p>Efternamn: {loggedInCustomer.lastname}</p>
-                <p>Email: {loggedInUser.email}</p>
-                <p>Adress: {loggedInCustomer.address}</p>
-                <p>Postkod: {loggedInCustomer.zipcode}</p>
-                <p>Stad: {loggedInCustomer.city}</p>
+                <h3 className="Rubrik">PERSONLIG INFORMATION</h3>
+                <p className="Indrag">Förnamn: {loggedInCustomer.firstname}</p>
+                <p className="Indrag">Efternamn: {loggedInCustomer.lastname}</p>
+                <p className="Indrag">Email: {loggedInUser.email}</p>
+                <p className="Indrag">Adress: {loggedInCustomer.address}</p>
+                <p className="Indrag">Postkod: {loggedInCustomer.zipcode}</p>
+                <p className="Indrag">Stad: {loggedInCustomer.city}</p>
 
-                <h1>Mina bokningar</h1>
+                <h3 className="Rubrik">MINA BOKNINGAR</h3>
                 {bookings.map(booking =>
                     <div key={booking.id}>
                         <p>Datum: {booking.cleaningDate.substring(0, 10)}</p>
