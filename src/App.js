@@ -7,6 +7,7 @@ import Register from './Components/Register';
 import Boka from "./Components/Boka";
 import Cleanings from "./Components/Cleanings";
 import Assign from "./Components/Assign";
+import Contact from './Components/Contact';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/boka' element={<Boka />}></Route>
           <Route path='/cleanings' element={<Cleanings />}></Route>
           <Route path='/assign/:id' element={<Assign />}></Route>
+          <Route path='/contact' element={<Contact />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
