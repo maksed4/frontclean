@@ -3,6 +3,8 @@ import AuthService from "../../Services/AuthService";
 import axios from "axios";
 import Avboka from "./Avboka";
 import { Layout } from "../Layout";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const CurrentCustomerSidor = () => {
 
@@ -50,7 +52,10 @@ const CurrentCustomerSidor = () => {
                 <p className="Indrag">Postkod: {loggedInCustomer.zipcode}</p>
                 <p className="Indrag">Stad: {loggedInCustomer.city}</p>
 
-                <h3 className="Rubrik">MINA BOKNINGAR</h3>
+                <div>
+                    <FontAwesomeIcon icon={["fa-solid","fa-vacuum"]} />
+                    <h3 className="Rubrik">MINA BOKNINGAR</h3>
+                </div>
                 {bookings.map(booking =>
                     <div key={booking.id}>
                         <p>Datum: {booking.cleaningDate.substring(0, 10)}</p>

@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import AuthService from "../Services/AuthService";
+import { Layout } from "./Layout";
+import BokaStadningar from "../images/BokaStadningar.png"
 
 const Boka = () => {
 
@@ -63,24 +65,28 @@ const Boka = () => {
 
 
     return (
-        <div>
-            <h1>Boka städning</h1>
-            <form>
-                <input type="date" onChange={e => handleDate(e)}/>
-                <input type="time" onChange={e => handleTime(e)}/>
-                <select value={selected} onChange={handleSelect}>
-                    {options.map(option => (
-                        <option
-                            disabled={option.disabled}
-                            key={option.value}
-                            value={option.value}
-                        >
-                            {option.text}
-                        </option>
-                    ))}
-                </select>
-                <button onClick={handleButton}>Boka</button>
-            </form>
+        <div className="IndragBild">
+            <div>
+                <img src={BokaStadningar} alt="Bild Boka Städning" width="400" height="400"></img>
+            </div>
+            <div className="DivBoka">
+                <form className="IndragBoka">
+                    <input className="InputBoka" type="date" onChange={e => handleDate(e)}/>
+                    <input className="InputBoka" type="time" onChange={e => handleTime(e)}/>
+                    <select className="InputBoka2" value={selected} onChange={handleSelect}>
+                        {options.map(option => (
+                            <option
+                                disabled={option.disabled}
+                                key={option.value}
+                                value={option.value}
+                            >
+                                {option.text}
+                            </option>
+                        ))}
+                    </select>
+                    <button className="BokaButton" onClick={handleButton}>Boka</button>
+                </form>
+            </div>
         </div>
     );
 }
