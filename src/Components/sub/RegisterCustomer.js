@@ -66,8 +66,8 @@ const RegisterCustomer = () => {
 
     return (
         <div>
-            <div className="Indrag">
-                <h1 className="Indrag">Personlig information</h1>
+            <div>
+                <h1>Personlig information</h1>
                 <div>
                     <input type="text" placeholder="Förnamn" value={firstname}
                            onChange={(e => setFirstname(e.target.value))}

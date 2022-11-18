@@ -21,7 +21,7 @@ const UserHem = () => {
 
     return (
         <div>
-            <h1>Hej {loggedInCustomer.firstname} {loggedInCustomer.lastname}</h1>
+            <h3 className="Rubrik">Hej {loggedInCustomer.firstname} {loggedInCustomer.lastname}!</h3>
         </div>
     )
 }

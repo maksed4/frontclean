@@ -51,13 +51,21 @@
   padding-right: 20px;
   margin-left: 65px;
   margin-top: 15px;
-  max-width: 200px;
 }
 
 .IndragBild {
   display: flex;
   flex-direction: row-reverse;
   justify-content: left;
+}
+
+.IndragBildUser {
+  margin-left: 70px;
+  margin-top: -5px;
+}
+
+.IndragBildUser2 {
+  margin-top: -40px;
 }
 
 .InputBoka {
@@ -73,6 +81,7 @@
 
 .DivBoka {
   margin-top: 60px;
+  width: 400px;
 }
 
 .Rubrik {
