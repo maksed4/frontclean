@@ -34,6 +34,27 @@ const CleanerSidor = () => {
         });
     }, []);
 
+    const handleClick = (cleanId, bool) => {
+        let isCompleted = bool ? " slutförd" : " icke slutförd";
+
+        fetch(process.env.REACT_APP_BASE_URL + "/api/cleaner/completed", {
+            method: 'PUT',
+            body: JSON.stringify({
+                cleaningId: cleanId,
+                cleanerId: AuthService.getCurrentUser().id,
+                isCompleted: bool
+            }),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + AuthService.getCurrentUser().token
+            }
+        })
+            .then(() => {
+                window.location.reload();
+                alert("Städning med id: " + cleanId + isCompleted)
+            })
+    }
+
     return(
         <div>
             <h1>Personlig information</h1>
@@ -42,7 +63,10 @@ const CleanerSidor = () => {
             <p>ID: {cleaner.id}</p>
 
             <h1>Mina städningar</h1>
-            {cleanings.map(cleaning =>
+            {cleanings
+                .sort((a, b) => a.cleaningDate > b.cleaningDate ? 1 : -1)
+                .sort((a, b) => a.done - b.done)
+                .map(cleaning =>
                 <div key={cleaning.id}>
                     <p>
                         Datum: {cleaning.cleaningDate.substring(0, 10)} | Tid: {cleaning.cleaningDate.substring(11, 16)}
@@ -57,7 +81,15 @@ const CleanerSidor = () => {
                     }</span>
                     </p>
 
-                    <p>Färdig: {cleaning.done ? <button> Ja </button> : <span>Nej</span> } | Städ ID: {cleaning.id}</p>
+                    <p>
+                        Färdig:
+                        {
+                        cleaning.done ?
+                        <button onClick={() => handleClick(cleaning.id, false)}> Ja </button> :
+                        <button onClick={() => handleClick(cleaning.id, true)}>Nej</button>
+                        }
+                        | Städ ID: {cleaning.id}
+                    </p>
                     <br/>
                 </div>
             )}
