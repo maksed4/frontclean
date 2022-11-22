@@ -17,6 +17,7 @@ const Avboka = (props) => {
             Nej
             <br/>
             <button
+                className="BokaButton"
                 onClick={handleClick}
             >Avboka</button>
         </span>
