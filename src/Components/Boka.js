@@ -3,8 +3,11 @@ import axios from "axios";
 import AuthService from "../Services/AuthService";
 import { Layout } from "./Layout";
 import BokaStadningar from "../images/BokaStadningar.png"
+import {useNavigate} from "react-router-dom";
 
 const Boka = () => {
+
+    let navigate = useNavigate();
 
     const [loggedInUser, SetLoggedInUser] = useState({
         id: 0,
@@ -58,8 +61,11 @@ const Boka = () => {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + loggedInUser.token
             }
+        }).then(() => {
+            navigate("/minasidor");
+            window.location.reload();
+            alert("Städning bokad!")
         })
-        console.log(response);
 
     }
 
