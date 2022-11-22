@@ -7,12 +7,14 @@ import Register from './Components/Register';
 import Boka from "./Components/Boka";
 import Cleanings from "./Components/Cleanings";
 import Assign from "./Components/Assign";
+import Contact from './Components/Contact';
 import AdminBoka from "./Components/AdminBoka";
 import Cleaners from "./Components/Cleaners";
 import CleanerSignup from "./Components/CleanerSignup";
 import Customers from "./Components/Customers";
 import CustomerSignupAdmin from "./Components/CustomerSignupAdmin";
 import UpdateCustomer from "./Components/UpdateCustomer";
+
 
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
           <Route path='/customers' element={<Customers />}></Route>
           <Route path='/customer-signup' element={<CustomerSignupAdmin />}></Route>
           <Route path='/assign/:id' element={<Assign />}></Route>
+          <Route path='/contact' element={<Contact />}></Route>
           <Route path='/update/:id' element={<UpdateCustomer />}></Route>
         </Route>
       </Routes>

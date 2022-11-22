@@ -36,6 +36,7 @@ const Nav = () => {
                 <ul className="Link"><Link to="Hem">HEM</Link></ul>
                 <ul className="Link"><Link to="boka">BOKA STÄDNING</Link></ul>
                 <ul className="Link"><Link to="MinaSidor">MINA SIDOR</Link></ul>
+                <ul className="Link"><Link to="contact">KONTAKT</Link></ul>
             </ul>
             <LogoutButton />
         </nav>

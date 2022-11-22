@@ -1,6 +1,8 @@
 import {useState} from "react";
 import AuthService from "../../Services/AuthService";
 import axios from "axios";
+import {Layout} from "../Layout";
+
 
 const RegisterCustomer = () => {
 

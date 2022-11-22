@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import AuthService from "../Services/AuthService";
+import {Layout} from "./Layout";
 
 const LogoutButton = () => {
 
@@ -12,7 +13,7 @@ const LogoutButton = () => {
     }
 
     return (
-        <button type="button" onClick={handleClick}>
+        <button className="LogoutButton" type="button" onClick={handleClick}>
             Log out
         </button>
     );

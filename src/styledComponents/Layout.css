@@ -1,13 +1,103 @@
 .Nav {
-    display: flex;
-    align-items: center;
-    margin-top: 50px;
-    color:#888
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  color:#888
 }
 
 .Link {
-    text-decoration: none;
-    color:#888
+  text-decoration: none;
+  color:#888
+}
+
+.LogoutButton {
+  margin-left: 65px;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-position: 0%;
+  background-size: 200%;
+  background-color: black;
+  transition: 0.4s;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.BokaButton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-position: 0%;
+  background-size: 200%;
+  background-color: #ecb43d;
+  transition: 0.4s;
+  color: rgb(20, 19, 19);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.Indrag {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  margin-top: 15px;
+}
+
+.IndragKontakt {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  margin-top: 15px;
+}
+
+.IndragBoka {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+  margin-left: 65px;
+  margin-top: 15px;
+}
+
+.IndragBild {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: left;
+}
+
+.IndragBildUser {
+  margin-left: 70px;
+  margin-top: -5px;
+}
+
+.IndragBildUser2 {
+  margin-top: -40px;
+}
+
+.InputBoka {
+  padding-bottom: 35px;
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.InputBoka2 {
+  padding: 10px
+}
+
+.DivBoka {
+  margin-top: 70px;
+  width: 400px;
+}
+
+.Rubrik {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20 px;
+  padding: 10px;
+  margin-top: 50px;
+  margin-left: 60px;
 }
 
 
