@@ -5,6 +5,7 @@ import Avboka from "./Avboka";
 import { Layout } from "../Layout";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Sidor from "../../images/Sidor.png"
+import IsApprove from "./IsApprove";
 
 
 const CurrentCustomerSidor = () => {
@@ -73,7 +74,7 @@ const CurrentCustomerSidor = () => {
                                             booking.cleaningType.includes("BASIC_CLEANING") ? <span>Basic</span> :
                                                 <></>
                             }</p>
-                            <p>Färdig: {booking.done ? <span> Ja </span> : <Avboka id={booking.id} />}</p>
+                            <p>Färdig: {booking.done ? <span> Ja {<IsApprove id={booking.id} />} </span> : <Avboka id={booking.id} />}</p>
                             <br/>
                         </div>
                     )}
