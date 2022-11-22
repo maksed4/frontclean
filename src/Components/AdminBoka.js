@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 import AuthService from "../Services/AuthService";
+import {useNavigate} from "react-router-dom";
 
 const Boka = () => {
 
@@ -16,6 +17,8 @@ const Boka = () => {
         {value: 'BASIC_CLEANING', text: 'Basic'},
         {value: 'WINDOW_CLEANING', text: 'Window'}
     ];
+
+    let navigate = useNavigate();
 
     const handleCustomerId = (e) => {
         setCustomerId(e.target.value);
@@ -50,9 +53,17 @@ const Boka = () => {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + AuthService.getCurrentUser().token
             }
+        }).then(() => {
+            navigate("/cleanings");
+            window.location.reload();
+            alert("Städning bokad");
         })
+            .then(() => {
+                navigate("/cleanings");
+                window.location.reload();
+                alert("Städning bokad")
+            })
         console.log(response);
-
     }
 
 

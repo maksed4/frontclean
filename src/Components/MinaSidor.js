@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import AuthService from "../Services/AuthService";
 import UserMinaSidor from "./sub/UserMinaSidor";
+import CleanerSidor from "./sub/CleanerSidor";
 
 const MinaSidor = () => {
 
@@ -27,15 +28,7 @@ const MinaSidor = () => {
         loggedInUser.roles.includes("USER") ?
         <UserMinaSidor />
         : loggedInUser.roles.includes("CLEANER") ?
-        <div>
-
-            <div>
-
-                <h1>Det är {loggedInUser.username} sidor</h1>
-
-            </div>
-
-        </div>
+        <CleanerSidor />
         : loggedInUser.roles.includes("ADMIN") ?
         <div>
 
