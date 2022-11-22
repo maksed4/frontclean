@@ -33,7 +33,7 @@ const MinaSidor = () => {
         : loggedInUser.roles.includes("ADMIN") ?
         <div className="IndragBild">
             <div className="IndragBildSidor">
-                <img src={Sidor} alt="Bild Sidor" width="400" height="400"></img>
+                <img src={Sidor} alt="Bild Mina Sidor" width="400" height="400"></img>
             </div>
             <div>
                 <h3 className="Rubrik">Det är {loggedInUser.username} sidor</h3>

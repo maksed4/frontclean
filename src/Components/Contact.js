@@ -10,7 +10,7 @@ const Contact = () => {
             </div>
             <div>
                 <h3 className="Rubrik" >Städafint AB</h3>
-                <p className="IndragKontakt">Adress: Mäster Samuelsgatan 45</p>
+                <p className="IndragKontakt">Adress: Medborgarplatsen 27 </p>
                 <p className="IndragKontakt">Stad: Stockholm</p>
                 <p className="IndragKontakt">Telefon: 08-800 800</p>
                 <p className="IndragKontakt">E-mail: info@stadafint.se</p>

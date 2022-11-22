@@ -64,8 +64,8 @@ const UpdateCustomer = () => {
     }
 
     return(
-        <div>
-            <h1>Updatera personlig information</h1>
+        <div className="Indrag">
+            <h3>Updatera personlig information</h3>
             <div>
                 <input type="text" value={firstname}
                        onChange={(e => setFirstname(e.target.value))}
@@ -97,7 +97,7 @@ const UpdateCustomer = () => {
                     ))}
                 </select>
             </div>
-            <button onClick={handleClick}>Uppdatera</button>
+            <button className="BokaButton3" onClick={handleClick}>Uppdatera</button>
         </div>
     );
 }

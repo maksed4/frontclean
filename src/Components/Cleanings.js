@@ -27,7 +27,7 @@ const Cleanings = () => {
     return (
         <div className="IndragBild">
             <div className="IndragBildAdmin">
-                <img src={BokaStadningar} alt="Bild Boka Städningar" width="400" height="400"></img>
+                <img src={BokaStadningar} alt="Bild Boka Städningar" width="380" height="400"></img>
             </div>
             <div>
             <Link to="/admin-boka"><br/><br/><br/></Link>
@@ -51,6 +51,7 @@ const Cleanings = () => {
                         <AdminAvboka
                             cleaningId={cleaning.id} customerId={cleaning.customerId}
                     />}</span></p>
+                    <br/>
                     <br/>
                 </div>
             )}

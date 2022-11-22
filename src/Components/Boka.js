@@ -67,7 +67,7 @@ const Boka = () => {
     return (
         <div className="IndragBild">
             <div className="IndragBildUser2">
-                <img src={BokaStadningar} alt="Bild Boka Städning" width="400" height="470"></img>
+                <img src={BokaStadningar} alt="Bild Boka Städningar" width="430" height="470"></img>
             </div>
             <div className="DivBoka">
                 <form className="IndragBoka">

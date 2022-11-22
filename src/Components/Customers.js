@@ -36,7 +36,7 @@ const Customers = () => {
                             customer.customerType.includes("COMPANY_CUSTOMER") ?
                                 <p className="customerType">Företag | ID: {customer.id}</p> :
                                 <></>}
-                        <Link className="IndragKontakt" to={`/update/${customer.id}`}>Redigera</Link>
+                        <Link className="BokaButton2" to={`/update/${customer.id}`}>Redigera</Link>
                         <br/>
                         <br/>
                     </div>
