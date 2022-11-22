@@ -28,12 +28,13 @@ const UpdateCustomer = () => {
             }
         })
             .then(res => {
+                console.log("customerType:", res.data.customerType)
                 setFirstname(res.data.firstname);
                 setLastname(res.data.lastname);
                 setAddress(res.data.address);
                 setZipcode(res.data.zipcode);
                 setCity(res.data.city);
-                setSelected(res.data.customerType);
+                setSelected(res.data.customerType[0]);
             })
     }, []);
 
@@ -42,6 +43,7 @@ const UpdateCustomer = () => {
     }
 
     const handleClick = () => {
+        console.log("Selected: ", selected)
         fetch(process.env.REACT_APP_BASE_URL + "/api/customer", {
             method: 'PUT',
             body: JSON.stringify({
