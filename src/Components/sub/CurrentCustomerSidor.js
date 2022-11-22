@@ -62,7 +62,10 @@ const CurrentCustomerSidor = () => {
                         <FontAwesomeIcon icon={["fa-solid","fa-vacuum"]} />
                         <h3 className="Rubrik">MINA BOKNINGAR</h3>
                     </div>
-                    {bookings.map(booking =>
+                    {bookings
+                        .sort((a, b) => a.cleaningDate > b.cleaningDate ? 1 : -1)
+                        .sort((a, b) => a.done - b.done)
+                        .map(booking =>
                         <div key={booking.id}>
                             <p>Datum: {booking.cleaningDate.substring(0, 10)}</p>
                             <p>Tid: {booking.cleaningDate.substring(11, 16)}</p>
