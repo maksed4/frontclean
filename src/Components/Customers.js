@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import AuthService from "../Services/AuthService";
 import {Link} from "react-router-dom";
+import Kunder from "../images/Kunder.png"
 
 const Customers = () => {
 
@@ -18,24 +19,29 @@ const Customers = () => {
     }, [])
 
     return (
-        <div>
-            <Link to={"/customer-signup"}><h1>Registrera ny kund</h1></Link>
-            {customers.map(customer =>
-                <div key={customer.id}>
-                    <h3>{customer.firstname} {customer.lastname}</h3>
-                    <p>Adress: {customer.address}</p>
-                    <p>Postkod: {customer.zipcode}</p>
-                    <p>Stad: {customer.city}</p>
-                    {customer.customerType.includes("PRIVATE_CUSTOMER") ?
-                        <p className="customerType">Privat | ID: {customer.id}</p> :
-                        customer.customerType.includes("COMPANY_CUSTOMER") ?
-                            <p className="customerType">Företag | ID: {customer.id}</p> :
-                            <></>}
-                    <Link to={`/update/${customer.id}`}>Redigera</Link>
-                    <br/>
-                    <br/>
-                </div>
-            )}
+        <div className="IndragBild">
+            <div className="IndragBildKunder">
+                <img src={Kunder} alt="Bild Kunder" width="400" height="350"></img>
+            </div>
+            <div>
+                <Link to={"/customer-signup"}><h3 className="Rubrik">REGISTRERA NY KUND</h3></Link>
+                {customers.map(customer =>
+                    <div key={customer.id}>
+                        <h3 className="IndragKontakt">{customer.firstname} {customer.lastname}</h3>
+                        <p className="IndragKontakt">Adress: {customer.address}</p>
+                        <p className="IndragKontakt">Postkod: {customer.zipcode}</p>
+                        <p className="IndragKontakt">Stad: {customer.city}</p>
+                        {customer.customerType.includes("PRIVATE_CUSTOMER") ?
+                            <p className="IndragKontakt">Privat | ID: {customer.id}</p> :
+                            customer.customerType.includes("COMPANY_CUSTOMER") ?
+                                <p className="customerType">Företag | ID: {customer.id}</p> :
+                                <></>}
+                        <Link className="IndragKontakt" to={`/update/${customer.id}`}>Redigera</Link>
+                        <br/>
+                        <br/>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

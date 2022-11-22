@@ -13,7 +13,6 @@ const AdminNav = () => {
                 <ul className="Link"><Link to="customers">KUNDER</Link></ul>
                 <ul className="Link"><Link to="cleaners">STÄDARE</Link></ul>
                 <ul className="Link"><Link to="MinaSidor">MINA SIDOR</Link></ul>
-                <ul className="Link"><Link to="Contact">KONTAKT</Link></ul>
             </ul>
             <LogoutButton />
         </nav>

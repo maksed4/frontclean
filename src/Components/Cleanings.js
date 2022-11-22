@@ -6,6 +6,8 @@ import CleaningCustomer from "./sub/CleaningCustomer";
 import CleaningCleaner from "./sub/CleaningCleaner";
 import AdminAvboka from "./sub/AdminAvboka";
 import {Link} from "react-router-dom";
+import { Layout } from "./Layout";
+import BokaStadningar from "../images/BokaStadningar.png"
 
 const Cleanings = () => {
     const [cleanings, setCleanings] = useState([]);
@@ -23,19 +25,23 @@ const Cleanings = () => {
     }, [])
 
     return (
-        <div>
-            <Link to="/admin-boka"><h1>Boka städning åt kund</h1></Link>
+        <div className="IndragBild">
+            <div className="IndragBildAdmin">
+                <img src={BokaStadningar} alt="Bild Boka Städningar" width="400" height="400"></img>
+            </div>
+            <div>
+            <Link to="/admin-boka"><br/><br/><br/></Link>
             {cleanings
                 .sort((a, b) => a.cleaningDate > b.cleaningDate ? 1 : -1)
                 .sort((a, b) => a.done - b.done)
                 .map(cleaning =>
                 <div key={cleaning.id}>
-                    <p>Städ ID: {cleaning.id}</p>
-                    <h3>Kund: <span>{<CleaningCustomer id={cleaning.customerId} />}</span></h3>
-                    <h3>Städare: <span>{<CleaningCleaner cleaningId={cleaning.id} />}</span></h3>
-                    <p>Datum: {cleaning.cleaningDate.substring(0, 10)} <span>| Tid: {cleaning.cleaningDate.substring(11, 16)}</span></p>
-                    <p>Plats: {cleaning.location}</p>
-                    <p>Typ: {
+                    <p className="IndragKontakt">🖤 Städ ID: {cleaning.id}</p>
+                    <h3 className="IndragKontakt">Kund: <span>{<CleaningCustomer id={cleaning.customerId} />}</span></h3>
+                    <h3 className="IndragKontakt">Städare: <span>{<CleaningCleaner cleaningId={cleaning.id} />}</span></h3>
+                    <p className="IndragKontakt">Datum: {cleaning.cleaningDate.substring(0, 10)} <span>| Tid: {cleaning.cleaningDate.substring(11, 16)}</span></p>
+                    <p className="IndragKontakt">Plats: {cleaning.location}</p>
+                    <p className="BokaButtonBigBox">Typ: {
                         cleaning.cleaningType.includes("TOP_CLEANING") ? <span>Top</span> :
                             cleaning.cleaningType.includes("DIAMOND_CLEANING") ? <span>Diamond</span> :
                                 cleaning.cleaningType.includes("WINDOW_CLEANING") ? <span>Fönster</span> :
@@ -48,6 +54,7 @@ const Cleanings = () => {
                     <br/>
                 </div>
             )}
+            </div>
         </div>
     );
 }

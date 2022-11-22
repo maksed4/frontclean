@@ -69,7 +69,7 @@ const Boka = () => {
 
     return (
         <div>
-            <h1>Boka städning</h1>
+            <h3>Boka städning</h3>
             <form>
                 <input number="customerId" onChange={e => handleCustomerId(e)}/>
                 <input type="date" onChange={e => handleDate(e)}/>

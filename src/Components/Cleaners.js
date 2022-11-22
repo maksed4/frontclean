@@ -2,6 +2,7 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import AuthService from "../Services/AuthService";
+import Stadare from "../images/Stadare.png"
 
 const Cleaners = () => {
 
@@ -18,18 +19,23 @@ const Cleaners = () => {
     }, [])
 
     return (
-        <div>
-            <Link to={"/cleaner-signup"}><h1>Registrera städare</h1></Link>
+        <div className="IndragBild">
+            <div className="IndragBildStadare">
+                <img src={Stadare} alt="Bild Städare" width="400" height="350"></img>
+            </div>
+            <div>
+            <Link to={"/cleaner-signup"}><h3 className="Rubrik">REGISTRERA STÄDARE</h3></Link>
 
             {cleaners
                 .map(cleaner =>
                     <div key={cleaner.id}>
-                        <p>ID: {cleaner.id}</p>
-                        <p>{cleaner.firstname} {cleaner.lastname}</p>
-                        <p>{cleaner.city}</p>
+                        <p className="IndragKontakt">ID: {cleaner.id}</p>
+                        <p className="IndragKontakt">{cleaner.firstname} {cleaner.lastname}</p>
+                        <p className="IndragKontakt">{cleaner.city}</p>
                         <br/>
                     </div>
                 )}
+            </div>    
         </div>
     );
 }

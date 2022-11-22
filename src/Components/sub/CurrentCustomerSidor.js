@@ -49,7 +49,7 @@ const CurrentCustomerSidor = () => {
                     <img src={Sidor} alt="Bild Mina Sidor" width="400" height="400"></img>
                 </div>
                 <div>
-                    <h3 className="Rubrik">👤 PERSONLIG INFORMATION</h3>
+                    <h3 className="Rubrik">🖤 PERSONLIG INFORMATION</h3>
                     <p className="Indrag">Förnamn: {loggedInCustomer.firstname}</p>
                     <p className="Indrag">Efternamn: {loggedInCustomer.lastname}</p>
                     <p className="Indrag">Email: {loggedInUser.email}</p>

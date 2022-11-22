@@ -38,6 +38,21 @@
   cursor: pointer;
 }
 
+.BokaButtonBigBox {
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 65px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-position: 0%;
+  background-size: 200%;
+  border-style: double;
+  transition: 0.4s;
+  color: rgb(20, 19, 19);
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .Indrag {
   display: flex;
   flex-direction: column;
@@ -86,6 +101,34 @@
   flex-direction: column;
   margin-left: 110px;
   margin-top: -60px;
+}
+
+.IndragBildKunder {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  margin-top: 10px;
+}
+
+.IndragBildStadare {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  margin-top: -20px;
+}
+
+.IndragBildAdmin {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  margin-top: -30px;
+}
+
+.IndragBildSidor {
+  display: flex;
+  flex-direction: column;
+  margin-left: 120px;
+  margin-top: -10px;
 }
 
 .InputBoka {

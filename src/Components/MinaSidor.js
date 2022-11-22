@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AuthService from "../Services/AuthService";
 import UserMinaSidor from "./sub/UserMinaSidor";
 import CleanerSidor from "./sub/CleanerSidor";
+import Sidor from "../images/Sidor.png"
 
 const MinaSidor = () => {
 
@@ -30,12 +31,12 @@ const MinaSidor = () => {
         : loggedInUser.roles.includes("CLEANER") ?
         <CleanerSidor />
         : loggedInUser.roles.includes("ADMIN") ?
-        <div>
-
+        <div className="IndragBild">
+            <div className="IndragBildSidor">
+                <img src={Sidor} alt="Bild Sidor" width="400" height="400"></img>
+            </div>
             <div>
-
-                <h1>Det är {loggedInUser.username} sidor</h1>
-
+                <h3 className="Rubrik">Det är {loggedInUser.username} sidor</h3>
             </div>
 
         </div>
